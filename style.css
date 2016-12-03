@@ -221,9 +221,7 @@ body{
 }
 
 table > thead{
-	    background-color: #455A64;
+	background-color: #455A64;
     color: white;
     font-weight: bold;
-}
-
-       
+}      
