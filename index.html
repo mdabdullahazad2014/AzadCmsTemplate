@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en" ng-app="scotchApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AngularJS</title>
+  <!-- STYLES -->
+  <link rel="stylesheet" type="text/css" href="components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="components/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="css/app.min.css"/>
+  
+  <link rel="stylesheet" href="libs/assets/animate.css/animate.css" type="text/css" />
+  <link rel="stylesheet" href="libs/assets/font-awesome/css/font-awesome.min.css" type="text/css" />
+  <link rel="stylesheet" href="libs/assets/simple-line-icons/css/simple-line-icons.css" type="text/css" />
+  <link rel="stylesheet" href="libs/jquery/bootstrap/dist/css/bootstrap.css" type="text/css" />
+  
+  <!-- SCRIPTS -->
+  <script type="text/javascript" src="components/jquery/src/jquery.min.js"></script>
+  <script type="text/javascript" src="components/angular/angular.min.js"></script>
+  <script type="text/javascript" src="components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+  <script type="text/javascript" src="components/angular-cookies/angular-cookies.min.js"></script>
+  <script type="text/javascript" src="components/ng-route/angular-route.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular-animate.js"></script>
+  
+  <!-- APP JS -->
+  <script src="app.js"></script>
+  <script src="libs/app.min.js"></script>
+
+  <!-- FILTER -->
+  <script src="filters/startFrom.js"></script>
+  
+  <!-- CONTROLLER -->
+  <script src="controller/login/loginCtrl.js"></script>
+  <script src="controller/sidebarCtrl.js"></script>
+  <script src="controller/progressBarCtrl.js"></script>
+  <script src="controller/tabsCtrl.js"></script>
+  <script src="controller/buttonsCtrl.js"></script>
+  <script src="controller/paginaionCtrl.js"></script>
+  
+</head>
+<body>
+
+	<div ng-if="authenticated">
+		<!-- headerBar -->  
+		<div data-ng-include="'view/header.html'"></div>
+		<div id="wrapper">    
+		    <!-- Sidebar -->
+		    <div data-ng-include="'view/sidebar.html'"></div>
+			<!-- MainContent -->
+		    <div class="mainView" data-ng-view></div>
+		</div>
+	</div>
+	
+	<div class="page page-home .ng-leave" ng-if="!authenticated">
+		<div data-ng-include="'view/login/login.html'"></div>
+	</div>
+		
+</body> 
+</html>
